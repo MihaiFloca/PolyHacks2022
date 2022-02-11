@@ -1,0 +1,20 @@
+{
+  "name": "backend-gti780",
+  "version": "1.0.0",
+  "description": "Meteo application",
+  "main": "main.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "init": "^0.1.2",
+    "pug": "^3.0.2",
+    "start": "^5.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node main.js"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC"
+}
