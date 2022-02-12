@@ -1,9 +1,9 @@
 import express from 'express';
 import reseauCyclable from '../controllers/reseauCyclable.js';
 
-const router = express.Router();
+const reseauCyclableRouter = express.Router();
 
 // Add routes here
-router.get('/pisteCyclables', reseauCyclable.getAllPisteCyclable);
+reseauCyclableRouter.get('/pisteCyclables', reseauCyclable.getAllPisteCyclable);
 
-export default router;
+export default reseauCyclableRouter;
