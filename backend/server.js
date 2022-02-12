@@ -13,8 +13,8 @@ import reseauCyclableRouter from './routes/reseauCyclabeRoutes.js';
 export default function createServer() {
     const app = express();
     app.use(cors());
-    app.use('', indexRoutes);
-    app.use(express.static('public'))
-    app.use('', reseauCyclableRouter)
+    app.use('/', indexRoutes);
+    app.use('/', express.static('public'))
+    app.use('/', reseauCyclableRouter)
     return app;
 }

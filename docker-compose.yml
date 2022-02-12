@@ -1,0 +1,43 @@
+#Docker compose file for Dashboard Frontend and backend
+version: '3.7'
+services:
+  fomo-backend:
+    container_name: fomo-backend
+    image: fomo-backend:latest
+    working_dir: /home/node/app
+    user: node
+    expose:
+      - '8000'
+    command: node main.js
+    depends_on:
+      - mongo
+
+  fomo-frontend:
+    container_name: fomo-frontend
+    image: fomo-frontend:latest
+    working_dir: /app
+    expose:
+      - '8080'
+    depends_on:
+      - fomo-backend
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    restart: always
+    ports:
+      - '27017:27017'
+    volumes:
+      - $HOME/.mongodb/fomo/db:/data/db
+
+  nginx:
+    image: nginx
+    container_name: nginx
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/nginx.local.conf:/etc/nginx/nginx.conf
+
+networks:
+  default:
+    name: fomo
