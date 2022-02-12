@@ -1,10 +1,20 @@
 import express from 'express';
 import APIController from '../controllers/APIController.js';
+import reseauCyclable from '../controllers/reseauCyclable.js';
 
-const router = express.Router();
+const reseauCyclableRouter = express.Router();
+
+reseauCyclableRouter.get('/findCoordinates', APIController.getCoordinates);
+reseauCyclableRouter.post('/findRoute', APIController.postRoute);
+reseauCyclableRouter.get('/pisteCyclables', reseauCyclable.getAllPisteCyclable);
 
 // Add routes here
-router.get('/findCoordinates', APIController.getCoordinates);
-router.post('/findRoute', APIController.postRoute);
+export default reseauCyclableRouter;
 
-export default router;
+
+
+
+
+
+
+
