@@ -10,6 +10,7 @@ const props = defineProps({
 onMounted(
   () => {
     console.log(props.like)
+    console.log
   }
 )
 const likes = ref(props.like) // ref allows us to use this variable in the template section
