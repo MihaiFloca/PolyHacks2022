@@ -1,7 +1,6 @@
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
-import indexRoutes from './routes/index.js';
 import reseauCyclableRouter from './routes/reseauCyclableRoutes.js';
 // import {merchantAppApiRouting} from './routes/merchantOnboardRoutes'; // merchant Onboard api routes
 // import * as mongoose from 'mongoose';
@@ -17,7 +16,6 @@ export default function createServer() {
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
     app.use(bodyParser.raw());
-    app.use('', indexRoutes);
     app.use(express.static('public'))
     app.use('', reseauCyclableRouter)
     return app;
