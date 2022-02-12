@@ -8,11 +8,12 @@
     "express": "^4.17.1",
     "init": "^0.1.2",
     "pug": "^3.0.2",
-    "start": "^5.1.0"
+    "start": "^5.1.0",
+    "nodemon": "^2.0.13"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node main.js"
+    "start": "nodemon main.js"
   },
   "type": "module",
   "author": "",
