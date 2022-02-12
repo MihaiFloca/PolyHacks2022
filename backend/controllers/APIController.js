@@ -19,9 +19,9 @@ async function getCoordinates(req, res, next) {
     }
 }
 
-async function postRoute(req, res, next) {
+async function getRoute(req, res, next) {
     try {
-        const result = await APIService.postRoute(req);
+        const result = await APIService.getRoute(req);
         if (result) {
             res.status(200).json(result);
             next();
@@ -36,5 +36,5 @@ async function postRoute(req, res, next) {
     }
 }
 export default { 
-    getCoordinates, postRoute 
+    getCoordinates, getRoute 
 };

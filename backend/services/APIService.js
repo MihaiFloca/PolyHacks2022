@@ -15,7 +15,7 @@ async function getCoordinates(req) {
     })
 }
 
-async function postRoute(req) {
+async function getRoute(req) {
     //API_KEY is a constant value, retrieved from an GraphHopper account
     const API_KEY = "f1642ba1-78c2-4b9c-b291-df83ff1dbf42"
 
@@ -23,7 +23,7 @@ async function postRoute(req) {
     var params = new URLSearchParams();
     params.append("point", `${coordinate1.lat},${coordinate1.lon}`);
     params.append("point", `${coordinate2.lat},${coordinate2.lon}`)
-    params.append("profile", profile);
+    params.append("profile", profile || "bike");
     params.append("key", API_KEY);
     params.append("points_encoded", false);
     return axios.get("https://graphhopper.com/api/1/route", { params })
@@ -34,5 +34,5 @@ async function postRoute(req) {
 }
 
 export default { 
-    getCoordinates, postRoute
+    getCoordinates, getRoute
 };
