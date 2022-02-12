@@ -20,7 +20,8 @@
     props: { geojson: Object },
     data: () => ({
       olMap: null,
-      vectorLayer: null
+      vectorLayer: null,
+      zoomLevel: 0,
     }),
     mounted() {
       this.vectorLayer = new VectorLayer({
@@ -43,6 +44,20 @@
           constrainResolution: true
         }),
       })
+
+      this.olMap.getView().on('change:resolution', (event) => {
+          this.zoomLevel = event.target.values_.zoom
+          console.log(this.zoomLevel)
+          if (this.zoomLevel > 14) {
+            if (!this.vectorLayer.getVisible()) {
+              this.vectorLayer.setVisible(true)
+            }
+          } else {
+            if (this.vectorLayer.getVisible()) {
+              this.vectorLayer.setVisible(false)
+            }
+          }
+      });
       this.updateSource(this.geojson)
     },
     watch: {
@@ -52,7 +67,9 @@
     },
     methods: {
       updateSource(geojson) {
-        if (!geojson) return
+         if (!geojson) {
+          return
+        }
         const view = this.olMap.getView()
         const source = this.vectorLayer.getSource()
 

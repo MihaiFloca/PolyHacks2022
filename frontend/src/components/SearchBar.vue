@@ -25,8 +25,8 @@
     },
     methods: {
       getPistes() {
-        axios.get('http://localhost:8000/pisteCyclables.json').then(response => {
-          console.log(response.data)
+        axios.get('http://localhost:8000/reseauCyclable.json').then(response => {
+          this.$emit('change', response.data)
         })
     },
     }
