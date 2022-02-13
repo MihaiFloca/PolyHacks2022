@@ -1,10 +1,10 @@
-FROM node:16-alpine as builder
+FROM node:17-alpine as builder
 WORKDIR /app
 COPY ./package*.json /app/
 
 RUN npm install
 
-FROM node:16-alpine
+FROM node:17-alpine
 WORKDIR /home/node/app
 USER node
 

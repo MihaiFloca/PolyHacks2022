@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Id_Reference": 8633, "Id_Intersection": 36, "Nom_Intersection": "Cavendish \/ Sherbrooke", "Date": "2019-10-18", "Periode": "15:00:00", "Heure": 15, "Minute": 0, "Seconde": 0, "Code_Banque": 10, "Description_Code_Banque": "Pietons", "NBLT": 0, "NBT": 0, "NBRT": 0, "SBLT": 0, "SBT": 0, "SBRT": 0, "EBLT": 0, "EBT": 0, "EBRT": 0, "WBLT": 0, "WBT": 0, "WBRT": 0, "Approche_Nord": 35, "Approche_Sud": 26, "Approche_Est": 24, "Approche_Ouest": 37, "Localisation_X": 294714.506, "Localisation_Y": 5035985.473, "Longitude": -73.62897, "Latitude": 45.463725 }, "geometry": { "type": "Point", "coordinates": [ -73.628969827175553, 45.463724707421633 ] } },
+]
+}

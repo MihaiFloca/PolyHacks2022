@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import reseauCyclableRouter from './routes/reseauCyclableRoutes.js';
+import Database from './database.js';
 // import {merchantAppApiRouting} from './routes/merchantOnboardRoutes'; // merchant Onboard api routes
 // import * as mongoose from 'mongoose';
 // import errorHandler from './_helpers/error-handler';
@@ -11,6 +12,7 @@ import reseauCyclableRouter from './routes/reseauCyclableRoutes.js';
 
 // Server config
 export default function createServer() {
+    const db = new Database()
     const app = express();
     app.use(cors());
     app.use('/', express.static('public'))
